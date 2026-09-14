@@ -8,7 +8,7 @@
       "role": "superadmin",
       "name": "Pentadbir Utama",
       "status": "ACTIVE",
-      "last_login": "2026-09-13 13:26:45",
+      "last_login": "2026-09-14 06:31:25",
       "created_at": "2026-09-02 08:00:00"
     },
     {
@@ -43,6 +43,17 @@
       "status": "ACTIVE",
       "last_login": "2026-09-12 15:20:24",
       "created_at": "2026-09-02 08:00:00"
+    },
+    {
+      "id": 22,
+      "username": "KKBDA001",
+      "email": "kkbda001@student.kkbda.edu.my",
+      "password_hash": "$2a$10$gJs3g58crkYetCMvw/DpEuLQmOWnb3CUSMRiUBsgFBTbIgQFI71a6",
+      "role": "student",
+      "name": "SUHAILI BT SHAHBUDIN",
+      "status": "ACTIVE",
+      "last_login": "2026-09-14 06:42:47",
+      "created_at": "2026-09-14 06:41:45"
     }
   ],
   "programmes": [
@@ -82,7 +93,23 @@
       "created_at": "2026-09-01 08:00:00"
     }
   ],
-  "students": [],
+  "students": [
+    {
+      "id": 43,
+      "student_id": "KKBDA001",
+      "name": "SUHAILI BT SHAHBUDIN",
+      "ic_number": "801122085808",
+      "programme_id": 1,
+      "semester": 1,
+      "class_group": "A",
+      "phone": "",
+      "email": "kkbda001@student.kkbda.edu.my",
+      "status": "ACTIVE",
+      "qr_token": "TOKEN-KKBDA001-VHXSR",
+      "created_at": "2026-09-14 06:41:45",
+      "updated_at": "2026-09-14 06:41:45"
+    }
+  ],
   "food_categories": [
     {
       "id": 1,
@@ -547,12 +574,12 @@
       "food_item_id": 6,
       "batch_number": "B-MAGGI-26A",
       "quantity_received": 180,
-      "quantity_remaining": 20,
+      "quantity_remaining": null,
       "expiry_date": "2027-05-20",
       "received_date": "2026-08-12",
       "unit_cost": 1.5,
       "source": "Peruntukan KPT",
-      "status": "ACTIVE",
+      "status": 19,
       "created_at": "2026-08-12 09:00:00"
     },
     {
@@ -989,12 +1016,12 @@
       "food_item_id": 1,
       "batch_number": "B-FB001-260912-EDIT",
       "quantity_received": 17,
-      "quantity_remaining": 17,
+      "quantity_remaining": null,
       "expiry_date": "2027-03-12",
       "received_date": "2026-09-12",
       "unit_cost": 1.2,
       "source": "Kemaskini Baki Terus",
-      "status": "ACTIVE",
+      "status": 16,
       "created_at": "2026-09-12 14:17:43"
     },
     {
@@ -2783,6 +2810,32 @@
       "operator_id": null,
       "remarks": "",
       "created_at": "2026-09-12 17:03:00"
+    },
+    {
+      "id": 129,
+      "transaction_code": "SOUT-2026-000046",
+      "transaction_type": 1,
+      "food_item_id": 42,
+      "batch_id": -1,
+      "quantity": 180,
+      "balance_after": 43,
+      "student_id": 22,
+      "operator_id": "Agihan Foodbank kepada pelajar: SUHAILI BT SHAHBUDIN (KKBDA001) [FDB-2026-000027]",
+      "remarks": "",
+      "created_at": "2026-09-14 06:42:32"
+    },
+    {
+      "id": 130,
+      "transaction_code": "SOUT-2026-000047",
+      "transaction_type": 6,
+      "food_item_id": 8,
+      "batch_id": -1,
+      "quantity": 0,
+      "balance_after": 43,
+      "student_id": 22,
+      "operator_id": "Agihan Foodbank kepada pelajar: SUHAILI BT SHAHBUDIN (KKBDA001) [FDB-2026-000027]",
+      "remarks": "",
+      "created_at": "2026-09-14 06:42:32"
     }
   ],
   "distribution_transactions": [
@@ -3045,6 +3098,16 @@
       "override_used": 0,
       "override_reason": null,
       "created_at": "2026-09-12 15:41:01"
+    },
+    {
+      "id": 27,
+      "transaction_code": "FDB-2026-000027",
+      "student_id": 43,
+      "operator_id": 22,
+      "total_items": 2,
+      "override_used": 0,
+      "override_reason": null,
+      "created_at": "2026-09-14 06:42:32"
     }
   ],
   "distribution_items": [
@@ -3460,6 +3523,20 @@
       "food_item_id": 10,
       "batch_id": 12,
       "quantity": 2
+    },
+    {
+      "id": 60,
+      "distribution_transaction_id": 27,
+      "food_item_id": 1,
+      "batch_id": 42,
+      "quantity": 1
+    },
+    {
+      "id": 61,
+      "distribution_transaction_id": 27,
+      "food_item_id": 6,
+      "batch_id": 8,
+      "quantity": 1
     }
   ],
   "inventory_adjustments": [
@@ -8073,6 +8150,76 @@
       "description": "Pengguna Pentadbir Utama (admin) telah log keluar",
       "ip_address": "127.0.0.1",
       "created_at": "2026-09-13 13:29:14"
+    },
+    {
+      "id": 436,
+      "user_id": 1,
+      "action": "LOGIN",
+      "module": "AUTH",
+      "record_id": null,
+      "description": "Pengguna Pentadbir Utama (admin) berjaya log masuk dengan peranan superadmin",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:31:25"
+    },
+    {
+      "id": 437,
+      "user_id": 1,
+      "action": "LOGOUT",
+      "module": "AUTH",
+      "record_id": null,
+      "description": "Pengguna Pentadbir Utama (admin) telah log keluar",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:40:10"
+    },
+    {
+      "id": 438,
+      "user_id": 22,
+      "action": "REGISTER_STUDENT",
+      "module": "AUTH",
+      "record_id": "KKBDA001",
+      "description": "Pendaftaran pelajar baharu: SUHAILI BT SHAHBUDIN (KKBDA001, IC: 801122085808)",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:41:45"
+    },
+    {
+      "id": 439,
+      "user_id": 22,
+      "action": "DISTRIBUTION",
+      "module": "DISTRIBUTION",
+      "record_id": "FDB-2026-000027",
+      "description": "Agihan 2 item kepada SUHAILI BT SHAHBUDIN (KKBDA001)",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:42:32"
+    },
+    {
+      "id": 440,
+      "user_id": 22,
+      "action": "LOGOUT",
+      "module": "AUTH",
+      "record_id": null,
+      "description": "Pengguna SUHAILI BT SHAHBUDIN (KKBDA001) telah log keluar",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:42:38"
+    },
+    {
+      "id": 441,
+      "user_id": 22,
+      "action": "LOGIN",
+      "module": "AUTH",
+      "record_id": null,
+      "description": "Pengguna SUHAILI BT SHAHBUDIN (KKBDA001) berjaya log masuk dengan peranan student",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:42:47"
+    },
+    {
+      "id": 442,
+      "user_id": 22,
+      "action": "LOGOUT",
+      "module": "AUTH",
+      "record_id": null,
+      "description": "Pengguna SUHAILI BT SHAHBUDIN (KKBDA001) telah log keluar",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-14 06:43:01"
     }
   ],
   "notifications": [
@@ -8110,18 +8257,18 @@
     }
   ],
   "counters": {
-    "users": 21,
+    "users": 22,
     "programmes": 5,
-    "students": 42,
+    "students": 43,
     "food_categories": 8,
     "food_items": 21,
     "inventory_batches": 52,
-    "stock_transactions": 128,
-    "distribution_transactions": 26,
-    "distribution_items": 59,
+    "stock_transactions": 130,
+    "distribution_transactions": 27,
+    "distribution_items": 61,
     "inventory_adjustments": 17,
     "system_settings": 10,
-    "audit_logs": 435,
+    "audit_logs": 442,
     "notifications": 4
   }
 }

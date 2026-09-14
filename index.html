@@ -2,55 +2,41 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=http://localhost:3000/">
-  <title>JOM KENYANG - Pelancar Sistem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOM KENYANG - Portal Pelancar Sistem</title>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #0f172a;
       color: #f8fafc;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-h: 100vh;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
+      padding: 1.5rem;
       text-align: center;
     }
     .card {
       background: #1e293b;
-      padding: 2.5rem;
-      border-radius: 1.5rem;
+      padding: 2rem;
+      border-radius: 1.25rem;
       border: 1px solid #334155;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      max-width: 480px;
-      width: 90%;
+      max-width: 520px;
+      width: 100%;
     }
     h1 {
       color: #34d399;
-      margin-top: 0;
-      font-size: 1.5rem;
+      margin: 0.5rem 0 0.25rem 0;
+      font-size: 1.6rem;
     }
-    p {
+    .subtitle {
       color: #94a3b8;
       font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background: #059669;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 0.75rem;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background: #047857;
+      margin-bottom: 1.5rem;
     }
     .badge {
       display: inline-block;
@@ -58,9 +44,56 @@
       color: #0f172a;
       font-weight: 800;
       font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
+      padding: 0.3rem 0.85rem;
       border-radius: 9999px;
-      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.25rem;
+      background: #059669;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      background: #047857;
+      transform: translateY(-2px);
+    }
+    .btn-mobile {
+      background: #2563eb;
+    }
+    .btn-mobile:hover {
+      background: #1d4ed8;
+    }
+    .info-box {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      margin-top: 1rem;
+    }
+    .info-box code {
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 0.15rem 0.4rem;
+      border-radius: 0.25rem;
+      font-family: monospace;
     }
   </style>
 </head>
@@ -68,9 +101,38 @@
   <div class="card">
     <div class="badge">KOLEJ KOMUNITI BANDAR DARULAMAN</div>
     <h1>JOM KENYANG</h1>
-    <p>Sistem Pengurusan Jom Kenyang — Dapur Siswa (Next.js App Server).</p>
-    <p>Membuka portal di <strong>http://localhost:3000</strong>...</p>
-    <a href="http://localhost:3000/" class="btn">Buka Sistem Secara Manual</a>
+    <p class="subtitle">Sistem Pengurusan Foodbank & Dapur Siswa</p>
+
+    <div class="btn-group">
+      <!-- Akses Handphone / Rangkaian Wi-Fi -->
+      <a id="btn-lan" href="http://10.160.124.55:3000/" class="btn btn-mobile">
+        📱 Buka Melalui Telefon Bimbit (10.160.124.55:3000)
+      </a>
+
+      <!-- Akses Komputer Tempatan -->
+      <a id="btn-local" href="http://localhost:3000/" class="btn">
+        💻 Buka Di Komputer Ini (localhost:3000)
+      </a>
+    </div>
+
+    <div class="info-box">
+      <strong>📌 Nota Penggunaan:</strong><br>
+      • Untuk <strong>telefon bimbit</strong>, pastikan telefon disambungkan ke Wi-Fi yang sama (KKBDA) dan tekan butang biru di atas.<br>
+      • Jika pelayan (server) belum dibuka di komputer, jalankan fail <code>Buka_Sistem_Foodbank.bat</code>.
+    </div>
   </div>
+
+  <script>
+    // Secara automatik sesuaikan pautan sekiranya fail dibuka dari pelayar
+    if (window.location.hostname && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.protocol.startsWith('file')) {
+      const currentHost = window.location.hostname;
+      // Jika dibuka dari IP khusus
+      const lanBtn = document.getElementById('btn-lan');
+      if (lanBtn && !currentHost.includes('github.io')) {
+        lanBtn.href = 'http://' + currentHost + ':3000/';
+        lanBtn.innerText = '📱 Buka Sistem (' + currentHost + ':3000)';
+      }
+    }
+  </script>
 </body>
 </html>
